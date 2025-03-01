@@ -1,2 +1,2 @@
-# ML_Prelabeling_Deploy
+# ML_Prelabeling_Pipeline
 Pre-lableing pipeline interacting with Labelstudio
