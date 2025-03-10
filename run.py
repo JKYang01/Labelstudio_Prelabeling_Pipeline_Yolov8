@@ -10,6 +10,7 @@ import yaml
 from pipeline_utils.utils.log import setup_logger
 logger = setup_logger(__name__)
 import torch
+import argparse
 logger.info(torch.__version__)  # PyTorch version
 logger.info(torch.cuda.is_available())  # Should return True if PyTorch detects your GPU
 logger.info(torch.version.cuda)  # CUDA version PyTorch is built with
@@ -17,7 +18,7 @@ logger.info(torch.backends.cudnn.enabled)
 
 
 class PDFProcessor:
-    def __init__(self,**kwargs):
+    def __init__(self,credential,**kwargs):
         if '__file__' in globals():
             # If running as a script
             self.script_dir = Path(__file__).resolve().parent
@@ -72,39 +73,33 @@ class PDFProcessor:
 
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='Process parameters')
+    parser.add_argument('--config', type=str, required=True,
+                        help='Path to config file')
+    return parser.parse_args()
 
+
+
+def main():
+    import json
+    args = parse_args()
+
+    # Load the config file
+    with open(args.config, 'r') as f:
+        config = json.load(f)
+
+    overrides = config['overrides']
+    credential = config['credential']
+    input_path = overrides['input_path']
+    task_name = overrides['task_name']
+    pdf_processor = PDFProcessor(credential=credential,**overrides)
+    # pdf_processor.pre_annotate_pngs()
+    pdf_processor.create_annotation_project(project_title=f"{input_path}_{task_name}_x")
 
 if __name__ == "__main__":
-    import os
-    from datetime import datetime, timezone
+   main()
 
-    # Get values from environment variables with defaults
-    overrides = {
-        "save_piece": os.environ.get("SAVE_PIECE", "False").lower() == "false",
-        "tile_size": int(os.environ.get("TILE_SIZE", 640)),
-        "bucket_name": os.environ.get("BUCKET_NAME", ""),
-        "input_path": os.environ.get("INPUT_PATH", ""),
-        "output_path": os.environ.get("OUTPUT_PATH", ""),
-        "task_name": os.environ.get("TASK_NAME", ""),
-    }
-
-    input_path = os.environ.get("INPUT_PATH", "")
-    task_name = os.environ.get("TASK_NAME", "")
-
-    credential = {
-        "import_bucket_name": os.environ.get("IMPORT_BUCKET_NAME", ""),
-        "prefix": f"{input_path}ml_predictions/ann/{task_name}",
-        "URL": os.environ.get("URL", "https://app.humansignal.com/api/projects/"),
-        "API_KEY": os.environ.get("API_KEY", ""),
-        "aws_access_key_id": os.environ.get("AWS_ACCESS_KEY_ID", ""),
-        "aws_secret_access_key": os.environ.get("AWS_SECRET_ACCESS_KEY", ""),
-        "region_name": os.environ.get("AWS_REGION", "")
-    }
-
-
-    pdf_processor = PDFProcessor(**overrides)
-    pdf_processor.pre_annotate_pngs()
-    pdf_processor.create_annotation_project(project_title=f"{input_path}_{task_name}")
 
 
 

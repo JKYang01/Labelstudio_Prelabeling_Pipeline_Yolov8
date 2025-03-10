@@ -12,7 +12,7 @@ class LS_Project:
         # self.config = cfg.load_config("labelstudio_config.yaml")
         self.config=LS_CFG
         self.ls = LabelStudio(
-        base_url="https://app.humansignal.com",
+        base_url=self.config.URL,
         api_key=self.config.API_KEY,
         )
     def get_project_id(self, project_name: str) -> object:

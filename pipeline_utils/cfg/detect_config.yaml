@@ -1,5 +1,5 @@
 bucket_name: "labelstudiobackend-dev"
-s3_model_path: "s3://sagemaker-us-east-1-100328509916/output_shapes_gen3_dillonchris_feb2025_batch8_1800_85epochs_2025-02-27-21-47-24/train/weights/best.pt"
+s3_model_path: ""
 model_path: "./model.pt"
 class_model_path: ""
 pdf_path: "s3://labelstudiobackend_dev/project5/TPG_Hotel_Indigo_Condensed_copy.pdf"
