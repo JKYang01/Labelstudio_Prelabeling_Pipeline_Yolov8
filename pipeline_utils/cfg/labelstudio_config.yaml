@@ -1,0 +1,16 @@
+API_KEY:
+URL: https://app.humansignal.com
+WEBHOOK: ''
+aws_access_key_id:
+aws_secret_access_key:
+bbx_label_config_xml: shape_label_config.xml
+caption_tag_xml: caption_tag.xml
+drawing_label_list:
+- door_single
+- door_double
+export_bucket_name: ''
+import_bucket_name: labelstudiocloudtest
+model_version: gen3
+prefix:
+region_name: us-east-1
+temp_work_dir: temp

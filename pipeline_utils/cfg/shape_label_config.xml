@@ -1,0 +1,21 @@
+<View>
+              <Image name="image" value="$image"/>
+              <RectangleLabels name="label" toName="image">
+              <Label value="arch_sheet_circle" background="#FFA39E"/>
+                <Label value="arches_archway" background="#D4380D"/>
+                <Label value="circle" background="#33fe27"/>
+                <Label value="diamond" background="#AD8B00"/>
+                <Label value="dot_small_circle" background="#9141ac"/>
+                <Label value="drawings" background="#389E0D"/>
+                <Label value="grid" background="#5CDBD3"/>
+                <Label value="hex_pill" background="#096DD9"/>
+                <Label value="hexagon" background="#ADC6FF"/>
+                <Label value="horizontal_area" background="#9254DE"/>
+                <Label value="oval" background="#F759AB"/>
+                <Label value="pill" background="#FFA39E"/>
+                <Label value="rectangle" background="#e447f5"/>
+                <Label value="square" background="#FFC069"/>
+                <Label value="triangle" background="#AD8B00"/>
+                <Label value="vertical_area" background="#D3F261"/>
+              </RectangleLabels>
+</View>

@@ -1,0 +1,11 @@
+temp/
+logs/
+__pycache__/
+aws.json
+psql.json
+*_key.json
+*psql.json
+*.ipynb
+*.pt
+*archived.py
+.xlsx

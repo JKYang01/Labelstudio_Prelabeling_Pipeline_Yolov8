@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "database-service"
+version = "0.1.0"
+description = ""
+authors = ["JKYang01 <koreya991@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+boto3 = "^1.35.62"
+torch = "^2.6.0"
+pillow = "^11.0.0"
+PyMuPDF = "^1.25.3"
+opencv-python = "^4.10.0.84"
+numpy = "<2.0.0"
+PyYAML = "^6.0.2"
+scipy = "^1.15.1"
+ultralytics = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,16 @@
+arch_sheet_circle
+arches_archway
+circle
+diamond
+dot_small_circle
+drawings
+grid
+hex_pill
+hexagon
+horizontal_area
+oval
+pill
+rectangle
+square
+triangle
+vertical_area
