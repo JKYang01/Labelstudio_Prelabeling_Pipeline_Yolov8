@@ -117,8 +117,7 @@ def base_detect(overrides=None,**kwargs):
                 #if box_conf >= filter_thresh[str(box_cls)]:
                     r=label_save(**params)
                     predictions.append(r)
-                    if params["format"]=='label_studio' and \
-                    params["label"]!="drawings":
+                    if params["format"]=='label_studio':
                         fr= Formats(**params).label_studio_pred()
                         format_predictions.append(fr)
                     elif params["format"]=="diffgram":
