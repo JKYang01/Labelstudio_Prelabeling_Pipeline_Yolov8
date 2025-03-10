@@ -9,3 +9,4 @@ psql.json
 *.pt
 *archived.py
 .xlsx
+KEY.txt

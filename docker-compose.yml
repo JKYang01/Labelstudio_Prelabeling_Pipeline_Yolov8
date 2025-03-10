@@ -1,0 +1,24 @@
+services:
+  ml_preann_pipeline:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - SAVE_PIECE=${SAVE_PIECE:-false}
+      - TILE_SIZE=${TILE_SIZE:-640}
+      - BUCKET_NAME=${BUCKET_NAME:-labelstudiocloudtest}
+      - INPUT_PATH=${INPUT_PATH:-wenzhe_test/}
+      - OUTPUT_PATH=${OUTPUT_PATH:-}
+      - S3_MODEL_PATH=${S3_MODEL_PATH:-}
+      - TASK_NAME=${TASK_NAME:-shape_ann}
+      - IMPORT_BUCKET_NAME=${IMPORT_BUCKET_NAME:-labelstudiocloudtest}
+      - API_KEY=${API_KEY:-}
+      - URL=${URL:-https://app.humansignal.com/}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+    # Uncomment to mount local directory for development/testing
+#    volumes:
+#      - ./:/app

@@ -1,4 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 from pipeline_utils.utils import DEFAULT_CFG,get_cfg
 from pipeline_utils.utils.ls_cfg import LS_CONFIG_DIR
@@ -38,7 +37,10 @@ class PDFProcessor:
             yaml.dump(data, yaml_file, default_flow_style=False)
 
         local_path = f"{self.params.temp_dir}/model.pt"
-        download_model(model_path=self.params.s3_model_path, local_path=local_path)
+        if Path(local_path).exists():
+            logger.info(f"Model File exists {local_path}")
+        else:
+            download_model(model_path=self.params.s3_model_path, local_path=local_path)
 
     def setup_overrides(self,**kwargs):
         # bucket,directory = check_link(self.project_data.sheet_saved_at)

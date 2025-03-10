@@ -3,6 +3,7 @@ boto3
 torch==2.6.0
 pillow>=11.0.0
 PyMuPDF>=1.25.3
+label-studio-sdk>=1.0.10
 opencv-python
 numpy
 PyYAML

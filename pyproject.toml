@@ -17,6 +17,7 @@ numpy = "<2.0.0"
 PyYAML = "^6.0.2"
 scipy = "^1.15.1"
 ultralytics = "*"
+label-studio-sdk = "^1.0.10"
 
 [build-system]
 requires = ["poetry-core"]
