@@ -2,8 +2,6 @@ bucket_name: "labelstudiobackend-dev"
 s3_model_path: ""
 model_path: "./model.pt"
 class_model_path: ""
-pdf_path: "s3://labelstudiobackend_dev/project5/TPG_Hotel_Indigo_Condensed_copy.pdf"
-# pdf_path: "s3://beaverdiffgrambackend/test_company/project2/centrarudy_morningside_fullset.pdf"
 model_version: "gen3"
 threshold: 0.1
 scale: 1.0
