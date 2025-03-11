@@ -21,9 +21,10 @@ The following area the parameters that are used in the pipeline
 
 
 ## Local environment deploy
-install package using Poetry  * recommend 
+install package using Poetry  * recommend method to avoid potential pacakge confiliction
 Install Poery https://python-poetry.org/docs/
-If it is too tedious just  using traditional pip method run following:
+
+or use traditional pip method run following:
 
 `$ pip install -r requirement.txt`
 
@@ -75,7 +76,8 @@ docker-compose up -d
 ```
 
 #### (Option) Running with Docker directly
-If you don' use docker-compose build directly with docker and add in parameters 
+If you don' use docker-compose method, or have problem with running docker compose,\
+try to build the image directly with docker with add-in parameters 
 Build the image:
 ```angular2html
 docker build -t ml_preann_pipeline .
@@ -98,7 +100,7 @@ Run the container with your configuration:
 
 ## Update Project 
 If you have a new annotation project to run and need to change the config parameters
-there are 3 ways to do it without rebuild the docker contianer
+there are 3 ways to achive your goal without rebuild the docker contianer.
 1. Using environment variables with docker run:
 ```
   docker run --rm \
