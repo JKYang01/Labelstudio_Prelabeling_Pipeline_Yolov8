@@ -21,6 +21,26 @@ The following area the parameters that are used in the pipeline
 
 
 ## Local environment deploy
+### create virtual environment (recommend)
+Option1 use virutalenv
+```
+sudo apt update
+
+sudo apt-get install python3-pip
+
+sudo pip3 install virtualenv
+
+python -m virtualenv -p python3.12 ls_preann
+
+source ls_preann/bin/activate
+```
+Option2 use anaconda or miniconda if you installed either of them
+```
+conda create -n ls_preann python=3.12
+conda activate ls_preann
+```
+
+### Install required packages 
 install package using Poetry  * recommend method to avoid potential pacakge confiliction
 Install Poery https://python-poetry.org/docs/
 
