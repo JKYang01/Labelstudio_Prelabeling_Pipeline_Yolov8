@@ -30,6 +30,10 @@ or use traditional pip method run following:
 
 
 open machine_prelabel_config.sh fill in the parameters for your annotation task
+If you test on the startcloud, the `URL='https://app.humansignal.com/'` open the account settings and get the labelstuio API key 
+if test on your localhost label studio:`URL='http://localhost:8080'` open the account settings and get label studio API key
+
+
 Then run grand the execution permission to this shell file 
 
 `$ chmod +x machine_prelabel_config.sh`
